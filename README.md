@@ -38,16 +38,15 @@ The underlying dataset is modeled using a clean **Star Schema** to ensure fast q
 To calculate the true profit margin contribution when filtering by **Campaign**, **Month**, or **Both** simultaneously against the full-year baseline, the following dynamic measure was engineered:
 
 ```dax
-Profit Margin (switch) = 
+Profit Margin = 
 VAR CurrentFilteredProfit = SUM(Fact_Sales[Net_Profit_SAR])
 
--- Calculates full-year baseline profit by stripping campaign and calendar filters
+-- Calculates full-year baseline profit by stripping campaign and Month filters
 VAR TotalOverallYearProfit = 
     CALCULATE(
         SUM(Fact_Sales[Net_Profit_SAR]), 
         ALL(Fact_Sales[Campaign_Type]),
         ALL(Dim_Date[Month]),
-        ALL(Dim_Date[Month_Num])
     )
 
 RETURN
