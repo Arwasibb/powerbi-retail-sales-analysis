@@ -6,6 +6,7 @@ An interactive, two-page Power BI executive solution built to analyze SAR 16M+ i
 
 ## 🎥 Interactive Dashboard Demo
 
+https://github.com/user-attachments/assets/abe73ea6-9c46-487c-8c4a-cf463c18e52e
 
 ---
 
